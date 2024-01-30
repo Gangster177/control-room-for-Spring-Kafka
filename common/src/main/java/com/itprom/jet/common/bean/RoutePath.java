@@ -10,9 +10,15 @@ import lombok.Setter;
 @EqualsAndHashCode
 @NoArgsConstructor
 public class RoutePath {
-    private RoutPoint from;
-    private RoutPoint to;
+    private RoutePoint from;
+    private RoutePoint to;
     private double progress;
+
+    public RoutePath(RoutePoint from, RoutePoint to, double progress){
+        this.from = from;
+        this.to = to;
+        this.progress = progress;
+    }
 
     public void addProgress(double speed) {
         progress += speed;

@@ -19,11 +19,14 @@ public class Board {
     private double y;
     private double angle;
 
-    private boolean noBusy() {  // -> board::noBusy
+    public boolean noBusy() {  // -> board::noBusy
         return !busy;
     }
+    public boolean hasRoute(){
+        return route != null;
+    }
 
-    private void calculatePosition(RoutePath routDirection) {
+    public void calculatePosition(RoutePath routDirection) {
         double t = routDirection.getProgress();
 
         double toX = (1 - t) * routDirection.getFrom().getX() + t * routDirection.getTo().getX();
